@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% block head %}
+    <!-- Require meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block styles %}
+    <!-- Bootstrap CSS -->
+     {{ bootstrap.load_css() }}
+     {% endblock %}
+
+     <!-- En la versión de BT hay que añadir librería de iconos https://icons.getbootstrap.com/: https://stackoverflow.com/questions/73778793/cannot-get-bootstrap-glyph-icons-to-show-up-in-any-browser -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    
+    <title>{% block title %}{% endblock %}</title>
+    {% endblock %}
+</head>
+    <body>
+        {% block navbar %}{% endblock %}
+        {% block content %}{% endblock %}
+        {% block scripts %}
+            {{ bootstrap.load_js() }}
+        {% endblock %}
+    </body>
+</html>
